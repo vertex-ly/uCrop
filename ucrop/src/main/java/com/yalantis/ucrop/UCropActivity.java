@@ -335,6 +335,11 @@ public class UCropActivity extends AppCompatActivity {
      */
     private void setupAppBar() {
         setStatusBarColor(mStatusBarColor);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            View decor = getWindow().getDecorView();
+            decor.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+        }
+
 
         final Toolbar toolbar = findViewById(R.id.toolbar);
 
@@ -598,11 +603,7 @@ public class UCropActivity extends AppCompatActivity {
 
     private void setInitialState() {
         if (mShowBottomControls) {
-            if (mWrapperStateAspectRatio.getVisibility() == View.VISIBLE) {
-                setWidgetState(R.id.state_aspect_ratio);
-            } else {
-                setWidgetState(R.id.state_scale);
-            }
+            setWidgetState(R.id.state_rotate);
         } else {
             setAllowedGestures(0);
         }
