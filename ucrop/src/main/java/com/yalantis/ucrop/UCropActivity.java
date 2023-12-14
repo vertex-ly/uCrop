@@ -560,7 +560,7 @@ public class UCropActivity extends AppCompatActivity {
 
     private void setAngleText(float angle) {
         if (mTextViewRotateAngle != null) {
-            mTextViewRotateAngle.setText(String.format(Locale.getDefault(), "%.1f°", angle));
+            mTextViewRotateAngle.setText(String.format(Locale.ENGLISH, "%.1f°", angle));
         }
     }
 
@@ -572,7 +572,7 @@ public class UCropActivity extends AppCompatActivity {
 
     private void setScaleText(float scale) {
         if (mTextViewScalePercent != null) {
-            mTextViewScalePercent.setText(String.format(Locale.getDefault(), "%d%%", (int) (scale * 100)));
+            mTextViewScalePercent.setText(String.format(Locale.ENGLISH, "%d%%", (int) (scale * 100)));
         }
     }
 
